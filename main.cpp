@@ -1,7 +1,8 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 #include "mergesort.h"
 #include "quicksort.h"
+#include "heapsort.h"
 
 using namespace std;
 
@@ -9,9 +10,9 @@ typedef unsigned int uint;
 
 int main()
 {
-	vector<uint> nums = {3, 1, 4, 2, 8, 5, 7, 10, 6};
+	vector<uint> nums = {3, 1, 4, 2, 8, 5, 7, 6};
 
-  quickSort<uint>(&nums, 0, nums.size() - 1);
+  heapSort<uint>(&nums);
 
   for (uint &n : nums)
   {
