@@ -2,10 +2,6 @@
 #define MERGESORT_H
 
 #include<vector>
-#include <limits>
-
-template <typename T>
-const T INF = std::numeric_limits<T>::infinity();
 
 using namespace std;
 

@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 #include "mergesort.h"
+#include "quicksort.h"
 
 using namespace std;
 
@@ -10,7 +11,7 @@ int main()
 {
 	vector<uint> nums = {3, 1, 4, 2, 8, 5, 7, 10, 6};
 
-  mergeSort<uint>(&nums, 0, nums.size() - 1);
+  quickSort<uint>(&nums, 0, nums.size() - 1);
 
   for (uint &n : nums)
   {
