@@ -5,11 +5,24 @@
 
 using namespace std;
 
+template <typename T>
+T getPivo(vector<T> *arr, int left, int right)
+{
+  T mid = left + (right - left) / 2;
+
+  if ((*arr)[left] > (*arr)[mid]) swap((*arr)[left], (*arr)[mid]);
+  if ((*arr)[left] > (*arr)[right]) swap((*arr)[left], (*arr)[right]);
+  if ((*arr)[mid] > (*arr)[right]) swap((*arr)[mid], (*arr)[right]);
+
+  swap((*arr)[mid], (*arr)[right - 1]);
+  return (*arr)[right - 1];
+}
 
 template <typename T>
-T partition(vector<T> *arr, T left, T right)
+T partition(vector<T> *arr, int left, int right)
 {
-  T pivo = (*arr)[right];
+  // T pivo = (*arr)[right];
+  T pivo = getPivo(arr, left, right);
   T i = left - 1;
 
   for (int j = left; j < right; ++j)
@@ -26,7 +39,7 @@ T partition(vector<T> *arr, T left, T right)
 }
 
 template <typename T>
-void quickSort(vector<T> *arr, T left, T right)
+void quickSort(vector<T> *arr, int left, int right)
 {
   if (left < right)
   {
