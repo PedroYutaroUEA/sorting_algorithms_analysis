@@ -21,9 +21,9 @@ struct Time {
   float DP;
 };
 
-// const vector<long int> bases = {10000, 100000, 1000000, 10000000, 100000000};
+const vector<long int> bases = {10000, 100000, 1000000, 10000000, 100000000};
 // const vector<long int> bases = {10000, 100000};
-const vector<long int> bases = {10000, 100000, 1000000};
+///const vector<long int> bases = {10000, 100000, 1000000};
 
 float calc_mean(const vector<float> &times)
 {
@@ -143,7 +143,7 @@ int main()
     cout << "\nTotal time (s) for base " << size << " = " << baseTime / 1000;
     cout << "\nQuick: Mean = " << quickMean << " ms | DP = " << quickDP;
     cout << "\nMerge: Mean = " << mergeMean << " ms | DP = " << mergeDP;
-    cout << "\nHeap:  Mean = " << quickMean << " ms | DP = " << quickDP << "\n"; 
+    cout << "\nHeap:  Mean = " << heapMean << " ms | DP = " << heapDP << "\n"; 
 
     base.clear();
     buffer.clear(); 
